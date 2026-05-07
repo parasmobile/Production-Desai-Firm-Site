@@ -1,0 +1,50 @@
+import PracticeAreaLayout from "@/components/PracticeAreaLayout";
+
+const PersonalInjury = () => (
+  <PracticeAreaLayout
+    title="Personal Injury"
+    seoTitle="Personal Injury Attorney | Auto Accidents | The Desai Firm | Saint Augustine"
+    seoDescription="Saint Augustine personal injury lawyer handling auto accidents, premises liability, and negligence claims. Investigation, documentation, and aggressive negotiation."
+    breadcrumb="Practice Areas / Personal Injury"
+    heroSubtitle="Thorough investigation and aggressive advocacy for accident victims across Northeast Florida."
+    overview={
+      <>
+        <p>When you've been injured due to someone else's negligence, you're facing more than just physical recovery — medical bills, lost income, and insurance company tactics can compound the stress. You need an attorney who will investigate your claim thoroughly, document your damages, and negotiate aggressively on your behalf.</p>
+        <p>The Desai Firm approaches personal injury cases with a focus on building strong evidence from the outset. We work to establish liability, quantify your damages, and pursue the maximum recovery available under the law.</p>
+        <p className="text-sm italic text-muted-foreground">Results and outcomes vary. Past results do not guarantee future outcomes.</p>
+      </>
+    }
+    commonIssues={[
+      "Automobile and motorcycle accidents",
+      "Truck and commercial vehicle accidents",
+      "Premises liability (slip and fall)",
+      "Negligent security",
+      "Dog bites",
+      "Wrongful death claims",
+      "Uninsured/underinsured motorist claims",
+      "Insurance bad faith",
+    ]}
+    whatWeDo={[
+      "Conduct prompt, thorough investigations to preserve critical evidence",
+      "Coordinate with medical providers to document the full scope of your injuries",
+      "Calculate comprehensive damages including medical expenses, lost wages, pain and suffering, and future costs",
+      "Negotiate with insurance companies from a position of documented strength",
+      "File suit and pursue trial when fair settlement cannot be reached",
+      "Manage liens, subrogation claims, and coordination of benefits",
+    ]}
+    whatToExpect={[
+      "An initial case evaluation at no cost to determine the viability of your claim",
+      "Immediate steps to preserve evidence and protect your rights",
+      "Ongoing communication about case developments and settlement negotiations",
+      "An honest assessment of your case value based on documentation and comparable outcomes",
+      "No fees unless we recover compensation on your behalf (contingency fee arrangements available for qualifying cases)",
+    ]}
+    faqs={[
+      { q: "How long do I have to file a personal injury claim in Florida?", a: "In most cases, you have two years from the date of the injury to file a personal injury lawsuit in Florida (as modified by recent statutory changes). However, certain circumstances can shorten or extend this deadline. Consult an attorney as soon as possible to protect your rights." },
+      { q: "What if I'm partially at fault for my accident?", a: "Florida follows a modified comparative negligence standard. You may still recover damages if you are partially at fault, but your recovery may be reduced by your percentage of fault. If you are found to be more than 50% at fault, your recovery may be barred in certain cases." },
+      { q: "Should I talk to the other driver's insurance company?", a: "Be cautious about providing recorded statements to the other party's insurer without consulting an attorney first. Insurance adjusters are trained to minimize claims, and early statements can be used against you." },
+    ]}
+  />
+);
+
+export default PersonalInjury;

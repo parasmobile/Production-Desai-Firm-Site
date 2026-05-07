@@ -1,0 +1,49 @@
+import PracticeAreaLayout from "@/components/PracticeAreaLayout";
+
+const BusinessLLC = () => (
+  <PracticeAreaLayout
+    title="Business & LLC Disputes"
+    seoTitle="Business Dispute Attorney | LLC Disputes | The Desai Firm | Saint Augustine"
+    seoDescription="Saint Augustine business dispute attorney handling LLC member conflicts, dissolution, collections, and FDUTPA claims across Northeast Florida."
+    breadcrumb="Practice Areas / Business & LLC Disputes"
+    heroSubtitle="Resolving business conflicts efficiently — from member disputes to collections and consumer protection claims."
+    overview={
+      <>
+        <p>Business disputes can threaten your livelihood, your partnerships, and the enterprise you've built. Whether you're facing a conflict with a business partner, a collections matter, or a claim under Florida's Deceptive and Unfair Trade Practices Act (FDUTPA), you need practical legal counsel that focuses on protecting your interests while managing costs.</p>
+        <p>The Desai Firm represents business owners, LLC members, and entrepreneurs in disputes that range from internal governance conflicts to external commercial litigation. We work to resolve matters efficiently — through negotiation when possible and litigation when necessary.</p>
+      </>
+    }
+    commonIssues={[
+      "LLC member disputes and deadlock",
+      "Business dissolution and wind-down",
+      "Partnership and shareholder conflicts",
+      "Breach of operating agreement",
+      "Commercial collections and debt recovery",
+      "FDUTPA (Florida Deceptive and Unfair Trade Practices Act) claims",
+      "Business fraud and misrepresentation",
+      "Non-compete and non-solicitation disputes",
+    ]}
+    whatWeDo={[
+      "Evaluate the merits and economics of your business dispute from the outset",
+      "Review operating agreements, partnership documents, and corporate records",
+      "Negotiate resolutions that protect your financial interests and business relationships",
+      "Pursue or defend dissolution, buyout, or wind-down proceedings",
+      "Handle collections matters and judgment enforcement",
+      "Litigate consumer protection and FDUTPA claims on behalf of businesses and individuals",
+    ]}
+    whatToExpect={[
+      "An honest assessment of your position and the potential costs and timeline of resolution",
+      "A strategy that balances aggressive advocacy with practical business considerations",
+      "Clear communication about case developments and options at each stage",
+      "Thorough document review and evidence gathering to support your position",
+      "A focus on resolution — we don't prolong disputes unnecessarily",
+    ]}
+    faqs={[
+      { q: "What happens when LLC members can't agree?", a: "When LLC members reach a deadlock, options may include mediation, buyout provisions in the operating agreement, or judicial dissolution. The right approach depends on the specific terms of your operating agreement and the nature of the dispute." },
+      { q: "What is FDUTPA?", a: "The Florida Deceptive and Unfair Trade Practices Act protects consumers and businesses from unfair methods of competition and deceptive practices. FDUTPA claims can arise in a variety of business contexts and may provide for recovery of attorney's fees." },
+      { q: "How can I collect on a judgment?", a: "Florida law provides several mechanisms for judgment enforcement, including wage garnishment, bank levies, liens on real property, and proceedings supplementary. The most effective approach depends on the debtor's assets and circumstances." },
+    ]}
+  />
+);
+
+export default BusinessLLC;

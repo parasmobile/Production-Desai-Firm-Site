@@ -1,0 +1,49 @@
+import PracticeAreaLayout from "@/components/PracticeAreaLayout";
+
+const LandUseZoning = () => (
+  <PracticeAreaLayout
+    title="Land Use & Zoning"
+    seoTitle="Land Use & Zoning Attorney | The Desai Firm | Saint Augustine FL"
+    seoDescription="Saint Augustine land use and zoning attorney handling vested rights, permitting disputes, and local government matters across Northeast Florida."
+    breadcrumb="Practice Areas / Land Use & Zoning"
+    heroSubtitle="Navigating the intersection of property rights, government regulations, and development across Northeast Florida."
+    overview={
+      <>
+        <p>Land use and zoning disputes involve the intersection of property rights, local government regulations, and community planning. Whether you're a property owner, developer, or business navigating permitting challenges, these matters require an attorney who understands both the legal framework and the practical realities of local government processes.</p>
+        <p>The Desai Firm brings regional experience across Northeast Florida — including familiarity with local government proceedings in the greater Palm Coast/Flagler County area and surrounding communities. We represent property owners and stakeholders in a range of land use and zoning matters.</p>
+      </>
+    }
+    commonIssues={[
+      "Vested rights determinations",
+      "Permitting disputes and appeals",
+      "Zoning variance applications",
+      "Comprehensive plan challenges",
+      "Code enforcement defense",
+      "Special exception and conditional use applications",
+      "Development order disputes",
+      "Local government hearing representation",
+    ]}
+    whatWeDo={[
+      "Analyze your property rights and the applicable zoning regulations",
+      "Prepare and present applications for variances, special exceptions, and conditional uses",
+      "Represent property owners in code enforcement proceedings",
+      "Challenge or defend land use decisions before local boards and in circuit court",
+      "Negotiate with local government staff and officials on permitting matters",
+      "Advise on the development approval process from concept through completion",
+    ]}
+    whatToExpect={[
+      "A thorough review of applicable zoning codes, comprehensive plans, and local ordinances",
+      "Clear guidance on the approval process, timelines, and potential obstacles",
+      "Professional representation before planning boards, city commissions, and county councils",
+      "Strategic advice on balancing development goals with regulatory compliance",
+      "Honest assessments of the feasibility of your land use objectives",
+    ]}
+    faqs={[
+      { q: "What is a vested rights determination?", a: "A vested rights determination protects property owners who have relied on existing regulations and invested resources in a development project. If regulations change after you've made substantial commitments, you may have a claim that your rights have 'vested' under the prior rules." },
+      { q: "How do I challenge a zoning decision?", a: "Zoning decisions by local boards can typically be appealed through an administrative process or to circuit court, depending on the nature of the decision. Time limits for filing appeals are strict, so prompt action is essential." },
+      { q: "Can a local government change my property's zoning without my consent?", a: "Local governments have broad authority to amend zoning classifications through their comprehensive planning process. However, property owners have procedural rights to notice and an opportunity to be heard, and certain changes may give rise to legal challenges." },
+    ]}
+  />
+);
+
+export default LandUseZoning;

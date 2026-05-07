@@ -1,0 +1,49 @@
+import PracticeAreaLayout from "@/components/PracticeAreaLayout";
+
+const CivilLitigation = () => (
+  <PracticeAreaLayout
+    title="Civil Litigation"
+    seoTitle="Civil Litigation Attorney | Contract Disputes | The Desai Firm | Saint Augustine"
+    seoDescription="Saint Augustine civil litigation attorney handling contract disputes, consumer claims, injunctions, and business conflicts across Northeast Florida."
+    breadcrumb="Practice Areas / Civil Litigation"
+    heroSubtitle="Strategic dispute resolution for contract conflicts, consumer claims, and complex civil matters."
+    overview={
+      <>
+        <p>Civil litigation encompasses a broad range of disputes between individuals, businesses, and organizations. Whether you've been sued or need to initiate legal action, the process requires careful analysis, strategic planning, and decisive execution.</p>
+        <p>At The Desai Firm, we emphasize early case assessment — understanding the full scope of your dispute before committing to a strategy. This allows us to identify the most efficient path forward, whether that's aggressive litigation, negotiation, or alternative dispute resolution.</p>
+      </>
+    }
+    commonIssues={[
+      "Breach of contract claims",
+      "Consumer disputes and FDUTPA claims",
+      "Injunctive relief (temporary and permanent)",
+      "Business tort claims",
+      "Fraud and misrepresentation",
+      "Debt collection and creditor actions",
+      "Insurance disputes",
+      "Landlord-tenant disputes",
+    ]}
+    whatWeDo={[
+      "Conduct thorough early case assessments to evaluate the merits and economics of your claim or defense",
+      "Draft and respond to complaints, motions, and discovery requests",
+      "Manage all phases of litigation from pleading through trial and appeal",
+      "Pursue or defend injunctions requiring immediate court intervention",
+      "Negotiate settlements when favorable terms are available",
+      "Represent clients in mediation, arbitration, and alternative dispute resolution",
+    ]}
+    whatToExpect={[
+      "A candid evaluation of your case's strengths, weaknesses, and potential outcomes",
+      "A litigation strategy designed to align with your goals and budget",
+      "Thorough preparation at every stage — no cutting corners",
+      "Responsive communication and proactive case management",
+      "A focus on efficiency — we don't generate unnecessary work",
+    ]}
+    faqs={[
+      { q: "How long does a civil lawsuit take?", a: "Timelines vary significantly. Some cases resolve in months through settlement, while others may take a year or more if they proceed to trial. We'll give you a realistic timeline based on the specifics of your case." },
+      { q: "What's the difference between mediation and litigation?", a: "Mediation is a voluntary, collaborative process where a neutral mediator helps parties reach a settlement. Litigation involves presenting your case to a judge or jury for a binding decision. Many civil cases in Florida are required to attempt mediation before going to trial." },
+      { q: "Can I recover attorney's fees if I win?", a: "In Florida, attorney's fees are recoverable in certain types of cases — particularly where a contract or statute provides for fee-shifting. We'll evaluate whether fee recovery applies to your situation early in the process." },
+    ]}
+  />
+);
+
+export default CivilLitigation;
