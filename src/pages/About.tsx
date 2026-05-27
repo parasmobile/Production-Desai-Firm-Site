@@ -3,7 +3,7 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
-import coastalImage from "@/assets/staugustine-coastal.jpg";
+import parasPortrait from "@/assets/paras-desai.jpg";
 
 const values = [
   { title: "Candor", desc: "You'll hear the truth about your case — the strengths and the risks — so you can make informed decisions." },
@@ -58,16 +58,16 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative rounded-lg shadow-xl overflow-hidden">
               <img
-                src={coastalImage}
-                alt="Coastal view of Saint Augustine, Florida with the Bridge of Lions over Matanzas Bay"
-                className="rounded-lg shadow-xl w-full"
-                width={1280}
-                height={960}
-                loading="lazy"
+                src={parasPortrait}
+                alt="Paras J. Desai, Esq. — The Desai Law Firm"
+                className="w-full h-[520px] object-cover object-[center_20%]"
+                width={600}
+                height={600}
+                loading="eager"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/80 to-transparent p-6 rounded-b-lg">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/80 to-transparent p-6">
                 <p className="text-primary-foreground text-sm font-medium">Florida Bar No. 030827</p>
                 <p className="text-primary-foreground/70 text-xs">The Desai Law Firm LLC · Saint Augustine, FL</p>
               </div>
