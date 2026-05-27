@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Navy shield body -->
+  <path d="M2 3 H30 V18 Q30 31 16 31 Q2 31 2 18 Z" fill="#162d52"/>
+  <!-- Chief (heraldic top band) slightly lighter navy -->
+  <rect x="2" y="3" width="28" height="7.5" fill="#1e3a6e" rx="0"/>
+  <!-- Chief divider line in gold -->
+  <line x1="2" y1="10.5" x2="30" y2="10.5" stroke="#c49a3c" stroke-width="1.2"/>
+  <!-- Shield border in gold -->
+  <path d="M2 3 H30 V18 Q30 31 16 31 Q2 31 2 18 Z" fill="none" stroke="#c49a3c" stroke-width="1.6"/>
+  <!-- Small diamond ornament in chief -->
+  <polygon points="16,4.5 17.5,7 16,9.5 14.5,7" fill="#c49a3c"/>
+  <!-- Serif D monogram in body -->
+  <text x="16" y="25"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="17"
+        font-weight="bold"
+        fill="#c49a3c"
+        text-anchor="middle"
+        dominant-baseline="auto">D</text>
+</svg>
