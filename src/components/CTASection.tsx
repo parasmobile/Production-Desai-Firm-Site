@@ -23,11 +23,11 @@ const CTASection = ({
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/contact">
             <Button size="lg" className="bg-accent text-accent-foreground hover:bg-gold-light font-semibold px-8 text-base">
-              Request a Consultation
+              Request a Free Consultation
             </Button>
           </Link>
           <a href="tel:9045636952">
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8 text-base">
+            <Button size="lg" variant="outline" className="border-white/80 bg-white/15 text-white hover:bg-white/25 font-semibold px-8 text-base">
               <Phone className="w-4 h-4 mr-2" />
               (904) 563-6952
             </Button>

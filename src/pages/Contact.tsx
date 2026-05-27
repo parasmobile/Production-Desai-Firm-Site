@@ -11,16 +11,6 @@ import { useToast } from "@/hooks/use-toast";
 import SEOHead from "@/components/SEOHead";
 import PageHero from "@/components/PageHero";
 
-const practiceAreaOptions = [
-  "Family Law",
-  "Civil Litigation",
-  "Personal Injury",
-  "Land Use & Zoning",
-  "Probate & Estate Administration",
-  "Business & LLC Disputes",
-  "Other",
-];
-
 const countyOptions = [
   "St. Johns County",
   "Flagler County",
@@ -42,7 +32,6 @@ const Contact = () => {
     phone: "",
     email: "",
     county: "",
-    practice_area: "",
     brief_message: "",
     honeypot: "", // spam prevention
   });
@@ -75,9 +64,8 @@ const Contact = () => {
         phone: formData.phone,
         email: formData.email,
         county: formData.county,
-        practice_area: formData.practice_area,
         brief_message: formData.brief_message,
-        source: "desaifirm.com - Request a Consultation",
+        source: "desaifirm.com - Request a Free Consultation",
         submitted_at: new Date().toISOString(),
       };
 
@@ -184,7 +172,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-card border border-border rounded-lg p-8">
-                <h2 className="font-heading text-2xl font-bold text-card-foreground mb-2">Request a Consultation</h2>
+                <h2 className="font-heading text-2xl font-bold text-card-foreground mb-2">Request a Free Consultation</h2>
                 <p className="text-muted-foreground text-sm mb-8">
                   Fill out the form below and we'll get back to you as soon as possible. All fields marked with * are required.
                 </p>
@@ -254,33 +242,18 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label>County</Label>
-                      <Select onValueChange={(v) => handleChange("county", v)}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select county" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {countyOptions.map((c) => (
-                            <SelectItem key={c} value={c}>{c}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label>Practice Area</Label>
-                      <Select onValueChange={(v) => handleChange("practice_area", v)}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select practice area" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {practiceAreaOptions.map((p) => (
-                            <SelectItem key={p} value={p}>{p}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
+                  <div className="space-y-2">
+                    <Label>County</Label>
+                    <Select onValueChange={(v) => handleChange("county", v)}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select county" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {countyOptions.map((c) => (
+                          <SelectItem key={c} value={c}>{c}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
 
                   <div className="space-y-2">

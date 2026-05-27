@@ -104,7 +104,7 @@ const Header = () => {
             ))}
             <Link to="/contact" onClick={() => setMobileOpen(false)}>
               <Button className="w-full mt-4 bg-accent text-accent-foreground hover:bg-gold-light font-semibold">
-                Request a Consultation
+                Request a Free Consultation
               </Button>
             </Link>
           </nav>
