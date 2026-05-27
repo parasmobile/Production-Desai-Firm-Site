@@ -1,16 +1,28 @@
+import { Link } from "react-router-dom";
 import PracticeAreaLayout from "@/components/PracticeAreaLayout";
 
 const FamilyLaw = () => (
   <PracticeAreaLayout
     title="Family Law"
-    seoTitle="Family Law Attorney | Divorce & Custody | The Desai Firm | Saint Augustine"
+    seoTitle="Family Law Attorney Saint Augustine FL | The Desai Firm"
     seoDescription="Saint Augustine family law attorney handling divorce, child custody, timesharing, paternity, child support, and modifications in St. Johns County and Northeast Florida."
+    canonical="https://desaifirm.com/practice-areas/family-law"
     breadcrumb="Practice Areas / Family Law"
     heroSubtitle="Protecting families through divorce, custody disputes, and modifications with a focus on practical resolution."
     overview={
       <>
         <p>Family law matters are among the most personal and consequential legal issues a person can face. Whether you're navigating a divorce, a paternity case, or a dispute over child custody and timesharing, the stakes are high — and the process can be overwhelming.</p>
         <p>At The Desai Firm, we approach family law with the understanding that every situation is different. When possible, we pursue de-escalation and resolution through negotiation or mediation. When that isn't feasible, we are prepared to advocate aggressively in court. Our goal is always to achieve the best realistic outcome for you and your family.</p>
+        <div className="grid md:grid-cols-2 gap-4 mt-6 not-prose">
+          <Link to="/practice-areas/family-law/divorce" className="block p-5 rounded-lg border border-border bg-card hover:border-accent hover:shadow-md transition-all">
+            <p className="font-heading font-semibold text-card-foreground text-lg mb-1">Divorce</p>
+            <p className="text-muted-foreground text-sm">Contested and uncontested divorce, asset division, alimony, and marital property disputes.</p>
+          </Link>
+          <Link to="/practice-areas/family-law/child-custody" className="block p-5 rounded-lg border border-border bg-card hover:border-accent hover:shadow-md transition-all">
+            <p className="font-heading font-semibold text-card-foreground text-lg mb-1">Child Custody & Timesharing</p>
+            <p className="text-muted-foreground text-sm">Parenting plans, timesharing schedules, modifications, and relocation matters in Florida courts.</p>
+          </Link>
+        </div>
       </>
     }
     commonIssues={[

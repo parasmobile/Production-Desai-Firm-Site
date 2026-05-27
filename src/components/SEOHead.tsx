@@ -84,5 +84,9 @@ export const firmJsonLd = {
   ],
   "priceRange": "$$",
   "openingHours": "Mo-Fr 09:00-17:00",
-  "sameAs": []
+  "sameAs": [
+    "https://www.floridabar.org/directories/find-mbr/profile/?num=030827",
+    "https://www.avvo.com/attorneys/32084-fl-paras-desai.html",
+    "https://justia.com/lawyers/florida/saint-augustine"
+  ]
 };

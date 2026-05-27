@@ -13,6 +13,8 @@ import PersonalInjury from "./pages/practice-areas/PersonalInjury";
 import LandUseZoning from "./pages/practice-areas/LandUseZoning";
 import ProbateEstate from "./pages/practice-areas/ProbateEstate";
 import BusinessLLC from "./pages/practice-areas/BusinessLLC";
+import Divorce from "./pages/practice-areas/Divorce";
+import ChildCustody from "./pages/practice-areas/ChildCustody";
 import CountiesServed from "./pages/CountiesServed";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
@@ -35,6 +37,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/practice-areas" element={<PracticeAreas />} />
             <Route path="/practice-areas/family-law" element={<FamilyLaw />} />
+            <Route path="/practice-areas/family-law/divorce" element={<Divorce />} />
+            <Route path="/practice-areas/family-law/child-custody" element={<ChildCustody />} />
             <Route path="/practice-areas/civil-litigation" element={<CivilLitigation />} />
             <Route path="/practice-areas/personal-injury" element={<PersonalInjury />} />
             <Route path="/practice-areas/land-use-zoning" element={<LandUseZoning />} />

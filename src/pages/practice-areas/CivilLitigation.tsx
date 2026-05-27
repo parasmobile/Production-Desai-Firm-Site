@@ -3,8 +3,9 @@ import PracticeAreaLayout from "@/components/PracticeAreaLayout";
 const CivilLitigation = () => (
   <PracticeAreaLayout
     title="Civil Litigation"
-    seoTitle="Civil Litigation Attorney | Contract Disputes | The Desai Firm | Saint Augustine"
+    seoTitle="Civil Litigation Attorney Saint Augustine FL | The Desai Firm"
     seoDescription="Saint Augustine civil litigation attorney handling contract disputes, consumer claims, injunctions, and business conflicts across Northeast Florida."
+    canonical="https://desaifirm.com/practice-areas/civil-litigation"
     breadcrumb="Practice Areas / Civil Litigation"
     heroSubtitle="Strategic dispute resolution for contract conflicts, consumer claims, and complex civil matters."
     overview={

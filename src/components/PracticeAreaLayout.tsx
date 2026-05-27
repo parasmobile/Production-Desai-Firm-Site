@@ -15,6 +15,7 @@ interface PracticeAreaLayoutProps {
   title: string;
   seoTitle: string;
   seoDescription: string;
+  canonical?: string;
   breadcrumb: string;
   heroSubtitle: string;
   overview: ReactNode;
@@ -25,12 +26,12 @@ interface PracticeAreaLayoutProps {
 }
 
 const PracticeAreaLayout = ({
-  title, seoTitle, seoDescription, breadcrumb, heroSubtitle,
+  title, seoTitle, seoDescription, canonical, breadcrumb, heroSubtitle,
   overview, commonIssues, whatWeDo, whatToExpect, faqs
 }: PracticeAreaLayoutProps) => {
   return (
     <>
-      <SEOHead title={seoTitle} description={seoDescription} />
+      <SEOHead title={seoTitle} description={seoDescription} canonical={canonical} />
       <PageHero title={title} subtitle={heroSubtitle} breadcrumb={breadcrumb} />
 
       {/* Overview */}

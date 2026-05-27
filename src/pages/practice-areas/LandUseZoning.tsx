@@ -3,8 +3,9 @@ import PracticeAreaLayout from "@/components/PracticeAreaLayout";
 const LandUseZoning = () => (
   <PracticeAreaLayout
     title="Land Use & Zoning"
-    seoTitle="Land Use & Zoning Attorney | The Desai Firm | Saint Augustine FL"
+    seoTitle="Land Use & Zoning Attorney Saint Augustine FL | The Desai Firm"
     seoDescription="Saint Augustine land use and zoning attorney handling vested rights, permitting disputes, and local government matters across Northeast Florida."
+    canonical="https://desaifirm.com/practice-areas/land-use-zoning"
     breadcrumb="Practice Areas / Land Use & Zoning"
     heroSubtitle="Navigating the intersection of property rights, government regulations, and development across Northeast Florida."
     overview={

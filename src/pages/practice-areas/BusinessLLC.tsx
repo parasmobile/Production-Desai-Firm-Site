@@ -3,8 +3,9 @@ import PracticeAreaLayout from "@/components/PracticeAreaLayout";
 const BusinessLLC = () => (
   <PracticeAreaLayout
     title="Business & LLC Disputes"
-    seoTitle="Business Dispute Attorney | LLC Disputes | The Desai Firm | Saint Augustine"
+    seoTitle="Business Dispute Attorney Saint Augustine FL | LLC Disputes | The Desai Firm"
     seoDescription="Saint Augustine business dispute attorney handling LLC member conflicts, dissolution, collections, and FDUTPA claims across Northeast Florida."
+    canonical="https://desaifirm.com/practice-areas/business-llc-disputes"
     breadcrumb="Practice Areas / Business & LLC Disputes"
     heroSubtitle="Resolving business conflicts efficiently — from member disputes to collections and consumer protection claims."
     overview={

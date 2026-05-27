@@ -3,8 +3,9 @@ import PracticeAreaLayout from "@/components/PracticeAreaLayout";
 const PersonalInjury = () => (
   <PracticeAreaLayout
     title="Personal Injury"
-    seoTitle="Personal Injury Attorney | Auto Accidents | The Desai Firm | Saint Augustine"
+    seoTitle="Personal Injury Attorney Saint Augustine FL | The Desai Firm"
     seoDescription="Saint Augustine personal injury lawyer handling auto accidents, premises liability, and negligence claims. Investigation, documentation, and aggressive negotiation."
+    canonical="https://desaifirm.com/practice-areas/personal-injury"
     breadcrumb="Practice Areas / Personal Injury"
     heroSubtitle="Thorough investigation and aggressive advocacy for accident victims across Northeast Florida."
     overview={

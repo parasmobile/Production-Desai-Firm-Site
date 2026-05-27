@@ -3,8 +3,9 @@ import PracticeAreaLayout from "@/components/PracticeAreaLayout";
 const ProbateEstate = () => (
   <PracticeAreaLayout
     title="Probate & Estate Administration"
-    seoTitle="Probate Attorney | Estate Administration | The Desai Firm | Saint Augustine"
+    seoTitle="Probate Attorney Saint Augustine FL | Estate Administration | The Desai Firm"
     seoDescription="Saint Augustine probate attorney handling summary and formal estate administration, creditor claims, and guardianship referrals in Northeast Florida."
+    canonical="https://desaifirm.com/practice-areas/probate-estate-administration"
     breadcrumb="Practice Areas / Probate & Estate Administration"
     heroSubtitle="Guiding families through the probate process with clarity, efficiency, and attention to detail."
     overview={
