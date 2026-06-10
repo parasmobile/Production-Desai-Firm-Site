@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Scale, Shield, Users, FileText, Building, MapPin, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SEOHead, { firmJsonLd } from "@/components/SEOHead";
+import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import heroImage from "@/assets/hero-staugustine.jpg";
 
@@ -28,7 +28,7 @@ const Index = () => {
       <SEOHead
         title="The Desai Firm | Saint Augustine Attorney | Florida Lawyer"
         description="Saint Augustine attorney Paras J. Desai provides results-driven legal representation in family law, civil litigation, personal injury, and more across Northeast Florida."
-        jsonLd={firmJsonLd}
+        canonical="https://desaifirm.com/"
       />
 
       {/* Hero */}

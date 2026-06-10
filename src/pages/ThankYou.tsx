@@ -9,6 +9,7 @@ const ThankYou = () => {
       <SEOHead
         title="Thank You | The Desai Firm"
         description="Your consultation request has been received. The Desai Firm will contact you shortly."
+        noindex
       />
 
       <section className="min-h-screen flex items-center justify-center bg-cream section-padding">

@@ -7,6 +7,7 @@ const PrivacyPolicy = () => {
       <SEOHead
         title="Privacy Policy | The Desai Firm"
         description="Privacy policy for The Desai Law Firm LLC website. Learn how we collect, use, and protect your information."
+        canonical="https://desaifirm.com/privacy-policy"
       />
 
       <PageHero title="Privacy Policy" breadcrumb="Privacy Policy" />

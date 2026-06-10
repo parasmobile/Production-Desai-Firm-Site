@@ -29,9 +29,51 @@ const PracticeAreaLayout = ({
   title, seoTitle, seoDescription, canonical, breadcrumb, heroSubtitle,
   overview, commonIssues, whatWeDo, whatToExpect, faqs
 }: PracticeAreaLayoutProps) => {
+  const canonicalSegments = canonical
+    ? new URL(canonical).pathname.split("/").filter(Boolean)
+    : [];
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://desaifirm.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Practice Areas", "item": "https://desaifirm.com/practice-areas" },
+      ...breadcrumb
+        .split(" / ")
+        .slice(1)
+        .map((name, i) => ({
+          "@type": "ListItem",
+          "position": i + 3,
+          "name": name,
+          ...(canonicalSegments.length
+            ? { item: `https://desaifirm.com/${canonicalSegments.slice(0, i + 1).join("/")}` }
+            : {}),
+        })),
+    ],
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a,
+      },
+    })),
+  };
+
   return (
     <>
-      <SEOHead title={seoTitle} description={seoDescription} canonical={canonical} />
+      <SEOHead
+        title={seoTitle}
+        description={seoDescription}
+        canonical={canonical}
+        jsonLd={[breadcrumbJsonLd, faqJsonLd]}
+      />
       <PageHero title={title} subtitle={heroSubtitle} breadcrumb={breadcrumb} />
 
       {/* Overview */}

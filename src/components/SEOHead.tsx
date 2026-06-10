@@ -4,10 +4,11 @@ interface SEOHeadProps {
   title: string;
   description: string;
   canonical?: string;
-  jsonLd?: object;
+  noindex?: boolean;
+  jsonLd?: object | object[];
 }
 
-const SEOHead = ({ title, description, canonical, jsonLd }: SEOHeadProps) => {
+const SEOHead = ({ title, description, canonical, noindex, jsonLd }: SEOHeadProps) => {
   useEffect(() => {
     document.title = title;
 
@@ -25,6 +26,7 @@ const SEOHead = ({ title, description, canonical, jsonLd }: SEOHeadProps) => {
     setMeta("og:title", title, "property");
     setMeta("og:description", description, "property");
     setMeta("og:type", "website", "property");
+    setMeta("robots", noindex ? "noindex, nofollow" : "index, follow");
 
     if (canonical) {
       let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
@@ -36,17 +38,21 @@ const SEOHead = ({ title, description, canonical, jsonLd }: SEOHeadProps) => {
       link.href = canonical;
     }
 
+    const scriptId = "json-ld-page";
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+
     if (jsonLd) {
-      let script = document.getElementById("json-ld") as HTMLScriptElement;
       if (!script) {
         script = document.createElement("script");
-        script.id = "json-ld";
+        script.id = scriptId;
         script.type = "application/ld+json";
         document.head.appendChild(script);
       }
       script.textContent = JSON.stringify(jsonLd);
+    } else if (script) {
+      script.remove();
     }
-  }, [title, description, canonical, jsonLd]);
+  }, [title, description, canonical, noindex, jsonLd]);
 
   return null;
 };

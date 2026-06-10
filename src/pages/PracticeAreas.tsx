@@ -19,6 +19,7 @@ const PracticeAreas = () => {
       <SEOHead
         title="Practice Areas | The Desai Firm | Saint Augustine Attorney"
         description="The Desai Firm provides legal representation in family law, civil litigation, personal injury, land use, probate, and business disputes across Northeast Florida."
+        canonical="https://desaifirm.com/practice-areas"
       />
 
       <PageHero

@@ -23,6 +23,7 @@ const Resources = () => {
       <SEOHead
         title="Legal Resources & FAQs | The Desai Firm | Saint Augustine"
         description="Frequently asked questions about family law, personal injury, civil litigation, probate, and more from The Desai Firm in Saint Augustine, Florida."
+        canonical="https://desaifirm.com/resources"
       />
 
       <PageHero

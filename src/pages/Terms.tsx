@@ -7,6 +7,7 @@ const Terms = () => {
       <SEOHead
         title="Terms of Use | The Desai Firm"
         description="Terms of use for The Desai Law Firm LLC website."
+        canonical="https://desaifirm.com/terms"
       />
 
       <PageHero title="Terms of Use" breadcrumb="Terms" />

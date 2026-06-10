@@ -25,6 +25,7 @@ const About = () => {
       <SEOHead
         title="About Paras J. Desai | The Desai Firm | Saint Augustine Attorney"
         description="Learn about attorney Paras J. Desai, Esq. and The Desai Firm's approach to practical, client-focused legal representation in Saint Augustine, Florida."
+        canonical="https://desaifirm.com/about"
       />
 
       <PageHero

@@ -44,6 +44,7 @@ const CountiesServed = () => {
       <SEOHead
         title="Counties Served | Northeast Florida | The Desai Firm"
         description="The Desai Firm serves St. Johns, Flagler, Duval, Clay, Putnam, and Volusia Counties. Attorney Paras J. Desai represents clients across Northeast Florida."
+        canonical="https://desaifirm.com/counties-served"
       />
 
       <PageHero

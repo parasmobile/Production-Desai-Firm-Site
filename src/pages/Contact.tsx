@@ -92,6 +92,7 @@ const Contact = () => {
       <SEOHead
         title="Contact The Desai Firm | Saint Augustine Attorney"
         description="Contact attorney Paras J. Desai for a consultation. Call (904) 563-6952 or submit our contact form. Offices in Saint Augustine, Florida."
+        canonical="https://desaifirm.com/contact"
       />
 
       <PageHero
