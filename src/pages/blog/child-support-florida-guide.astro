@@ -1,5 +1,6 @@
 ---
 import BlogPost from '@/components/BlogPost.astro';
+import ChildSupportCalculator from '@/components/ChildSupportCalculator';
 ---
 <BlogPost
   title="Child Support in Florida: How It's Calculated and What to Expect"
@@ -43,6 +44,12 @@ import BlogPost from '@/components/BlogPost.astro';
   <li><strong>Health insurance:</strong> The cost of the child's health insurance is added and shared proportionally.</li>
   <li><strong>Uncovered medical expenses:</strong> These are typically shared in proportion to income.</li>
 </ul>
+
+<h2>Florida Child Support Calculator</h2>
+
+<p>Use the estimator below to get a rough idea of what Florida's guidelines would produce in your situation. Enter both parents' net monthly income (after taxes), the number of children, overnights, and any add-on expenses.</p>
+
+<ChildSupportCalculator client:load />
 
 <h2>What Child Support Covers — and What It Doesn't</h2>
 
