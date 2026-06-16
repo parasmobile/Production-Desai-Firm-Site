@@ -1,0 +1,74 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import CTASection from '@/components/CTASection.astro';
+
+const posts = [
+  {
+    slug: "divorce-florida-guide",
+    title: "Divorce in Florida: A Complete Guide for Saint Augustine Residents",
+    description: "Everything you need to know about the Florida divorce process — timelines, property division, alimony, and how to protect your interests in St. Johns County.",
+    category: "Divorce",
+    date: "2026-06-16",
+    readTime: "8 min",
+  },
+  {
+    slug: "child-custody-timesharing-florida",
+    title: "Child Custody & Timesharing in Florida: What Every Parent Needs to Know",
+    description: "Florida uses 'timesharing' instead of custody. Learn how parenting plans work, how courts decide timesharing arrangements, and how to modify an existing order.",
+    category: "Child Custody",
+    date: "2026-06-16",
+    readTime: "7 min",
+  },
+  {
+    slug: "child-support-florida-guide",
+    title: "Child Support in Florida: How It's Calculated and What to Expect",
+    description: "Florida child support is set by statute using an income shares model. Learn how the calculation works, what can be modified, and what happens when support isn't paid.",
+    category: "Child Support",
+    date: "2026-06-16",
+    readTime: "7 min",
+  },
+];
+---
+<Layout
+  title="Family Law Blog | The Desai Firm | Saint Augustine, FL"
+  description="Practical legal insights from Saint Augustine attorney Paras J. Desai on divorce, child custody, child support, and family law in Florida."
+  canonical="https://desaifirm.com/blog/"
+>
+  <section class="bg-primary py-16">
+    <div class="container-legal px-4 sm:px-6 lg:px-8">
+      <div class="gold-divider mb-6"></div>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Legal Insights & Resources</h1>
+      <p class="text-primary-foreground/70 text-lg max-w-2xl">Practical guidance on Florida family law from Saint Augustine attorney Paras J. Desai.</p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-background">
+    <div class="container-legal px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="group block bg-card border border-border rounded-lg overflow-hidden hover:border-accent hover:shadow-lg transition-all duration-300">
+            <div class="bg-primary/5 border-b border-border px-6 py-4">
+              <span class="text-xs font-semibold tracking-widest uppercase text-accent">{post.category}</span>
+            </div>
+            <div class="p-6">
+              <h2 class="font-heading text-lg font-bold text-card-foreground mb-3 leading-snug group-hover:text-accent transition-colors">{post.title}</h2>
+              <p class="text-muted-foreground text-sm leading-relaxed mb-4">{post.description}</p>
+              <div class="flex items-center justify-between text-xs text-muted-foreground">
+                <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                <span>{post.readTime} read</span>
+              </div>
+            </div>
+            <div class="px-6 pb-5">
+              <span class="inline-flex items-center text-accent text-sm font-medium">
+                Read Article
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>

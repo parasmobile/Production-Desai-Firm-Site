@@ -7,6 +7,7 @@ const navLinks = [
   { label: "About", path: "/about" },
   { label: "Practice Areas", path: "/practice-areas" },
   { label: "Counties Served", path: "/counties-served" },
+  { label: "Blog", path: "/blog" },
   { label: "Resources", path: "/resources" },
   { label: "Contact", path: "/contact" },
 ];
