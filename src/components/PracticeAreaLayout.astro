@@ -20,15 +20,17 @@ interface Props {
 const { title, breadcrumb, heroSubtitle, commonIssues, whatWeDo, whatToExpect, faqs } = Astro.props;
 
 // BreadcrumbList JSON-LD from the breadcrumb prop (e.g. "Practice Areas / Family Law")
+const slugify = (s: string) => s.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 const breadcrumbParts = ["Home", ...breadcrumb.split(" / ")];
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbParts.map((name, i) => ({
-    "@type": "ListItem",
-    "position": i + 1,
-    "name": name,
-  })),
+  "itemListElement": breadcrumbParts.map((name, i) => {
+    const url = i === 0
+      ? "https://desaifirm.com/"
+      : `https://desaifirm.com/${breadcrumbParts.slice(1, i + 1).map(slugify).join('/')}/`;
+    return { "@type": "ListItem", "position": i + 1, "name": name, "item": url };
+  }),
 };
 
 // FAQPage JSON-LD from the faqs prop
