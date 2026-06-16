@@ -1,6 +1,7 @@
 ---
 import Header from '@/components/Header';
 import Footer from '@/components/Footer.astro';
+import ConsultationPopup from '@/components/ConsultationPopup';
 import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import '@/index.css';
@@ -99,6 +100,7 @@ const extraSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       </main>
       <Footer />
     </div>
+    <ConsultationPopup client:load />
     <Toaster client:load />
     <Sonner client:load />
   </body>
