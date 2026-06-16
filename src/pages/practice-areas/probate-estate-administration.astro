@@ -1,19 +1,16 @@
-import PracticeAreaLayout from "@/components/PracticeAreaLayout";
-
-const ProbateEstate = () => (
+---
+import Layout from '@/layouts/Layout.astro';
+import PracticeAreaLayout from '@/components/PracticeAreaLayout.astro';
+---
+<Layout
+  title="Probate Attorney Saint Augustine FL | Estate Administration | The Desai Firm"
+  description="Saint Augustine probate attorney handling summary and formal estate administration, creditor claims, and guardianship referrals in Northeast Florida."
+  canonical="https://desaifirm.com/practice-areas/probate-estate-administration"
+>
   <PracticeAreaLayout
     title="Probate & Estate Administration"
-    seoTitle="Probate Attorney Saint Augustine FL | Estate Administration | The Desai Firm"
-    seoDescription="Saint Augustine probate attorney handling summary and formal estate administration, creditor claims, and guardianship referrals in Northeast Florida."
-    canonical="https://desaifirm.com/practice-areas/probate-estate-administration"
     breadcrumb="Practice Areas / Probate & Estate Administration"
     heroSubtitle="Guiding families through the probate process with clarity, efficiency, and attention to detail."
-    overview={
-      <>
-        <p>Losing a loved one is difficult enough without the added complexity of navigating the legal system. Probate and estate administration involve managing the deceased's assets, paying creditors, and distributing property to beneficiaries — all under court supervision and within specific legal timelines.</p>
-        <p>The Desai Firm helps personal representatives (executors) and families navigate both summary and formal administration proceedings. We also assist with creditor claims, disputes among beneficiaries, and related matters. For guardianship needs, we can provide referrals to attorneys who focus in that specialized area.</p>
-      </>
-    }
     commonIssues={[
       "Summary administration (estates under statutory threshold)",
       "Formal administration",
@@ -44,7 +41,10 @@ const ProbateEstate = () => (
       { q: "How long does probate take in Florida?", a: "Summary administration can be completed in a matter of weeks. Formal administration typically takes 6 to 12 months, though contested estates or those with complex assets may take longer." },
       { q: "Is probate required if there's a will?", a: "Generally, yes. A will must be admitted to probate to be effective. However, certain assets — such as those held in trust, jointly titled property, or accounts with designated beneficiaries — may pass outside of probate." },
     ]}
-  />
-);
-
-export default ProbateEstate;
+  >
+    <div slot="overview">
+      <p>Losing a loved one is difficult enough without the added complexity of navigating the legal system. Probate and estate administration involve managing the deceased's assets, paying creditors, and distributing property to beneficiaries — all under court supervision and within specific legal timelines.</p>
+      <p>The Desai Firm helps personal representatives (executors) and families navigate both summary and formal administration proceedings. We also assist with creditor claims, disputes among beneficiaries, and related matters. For guardianship needs, we can provide referrals to attorneys who focus in that specialized area.</p>
+    </div>
+  </PracticeAreaLayout>
+</Layout>

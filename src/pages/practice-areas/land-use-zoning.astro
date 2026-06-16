@@ -1,19 +1,16 @@
-import PracticeAreaLayout from "@/components/PracticeAreaLayout";
-
-const LandUseZoning = () => (
+---
+import Layout from '@/layouts/Layout.astro';
+import PracticeAreaLayout from '@/components/PracticeAreaLayout.astro';
+---
+<Layout
+  title="Land Use & Zoning Attorney Saint Augustine FL | The Desai Firm"
+  description="Saint Augustine land use and zoning attorney handling vested rights, permitting disputes, and local government matters across Northeast Florida."
+  canonical="https://desaifirm.com/practice-areas/land-use-zoning"
+>
   <PracticeAreaLayout
     title="Land Use & Zoning"
-    seoTitle="Land Use & Zoning Attorney Saint Augustine FL | The Desai Firm"
-    seoDescription="Saint Augustine land use and zoning attorney handling vested rights, permitting disputes, and local government matters across Northeast Florida."
-    canonical="https://desaifirm.com/practice-areas/land-use-zoning"
     breadcrumb="Practice Areas / Land Use & Zoning"
     heroSubtitle="Navigating the intersection of property rights, government regulations, and development across Northeast Florida."
-    overview={
-      <>
-        <p>Land use and zoning disputes involve the intersection of property rights, local government regulations, and community planning. Whether you're a property owner, developer, or business navigating permitting challenges, these matters require an attorney who understands both the legal framework and the practical realities of local government processes.</p>
-        <p>The Desai Firm brings regional experience across Northeast Florida — including familiarity with local government proceedings in the greater Palm Coast/Flagler County area and surrounding communities. We represent property owners and stakeholders in a range of land use and zoning matters.</p>
-      </>
-    }
     commonIssues={[
       "Vested rights determinations",
       "Permitting disputes and appeals",
@@ -44,7 +41,10 @@ const LandUseZoning = () => (
       { q: "How do I challenge a zoning decision?", a: "Zoning decisions by local boards can typically be appealed through an administrative process or to circuit court, depending on the nature of the decision. Time limits for filing appeals are strict, so prompt action is essential." },
       { q: "Can a local government change my property's zoning without my consent?", a: "Local governments have broad authority to amend zoning classifications through their comprehensive planning process. However, property owners have procedural rights to notice and an opportunity to be heard, and certain changes may give rise to legal challenges." },
     ]}
-  />
-);
-
-export default LandUseZoning;
+  >
+    <div slot="overview">
+      <p>Land use and zoning disputes involve the intersection of property rights, local government regulations, and community planning. Whether you're a property owner, developer, or business navigating permitting challenges, these matters require an attorney who understands both the legal framework and the practical realities of local government processes.</p>
+      <p>The Desai Firm brings regional experience across Northeast Florida — including familiarity with local government proceedings in the greater Palm Coast/Flagler County area and surrounding communities. We represent property owners and stakeholders in a range of land use and zoning matters.</p>
+    </div>
+  </PracticeAreaLayout>
+</Layout>

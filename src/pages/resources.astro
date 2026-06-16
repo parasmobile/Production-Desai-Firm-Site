@@ -1,6 +1,7 @@
-import SEOHead from "@/components/SEOHead";
-import PageHero from "@/components/PageHero";
-import CTASection from "@/components/CTASection";
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/PageHero.astro';
+import CTASection from '@/components/CTASection.astro';
 
 const faqs = [
   { q: "How do I know if I need an attorney?", a: "If you're facing a legal dispute, potential lawsuit, family law issue, or any situation where your rights or finances are at stake, consulting with an attorney is generally advisable. An initial consultation can help you understand your options and whether legal representation is appropriate.", category: "General" },
@@ -16,49 +17,39 @@ const faqs = [
   { q: "How do zoning disputes work?", a: "Zoning disputes typically arise when a property owner seeks to use land in a way that conflicts with current zoning regulations, or when a local government attempts to change zoning classifications. These disputes may be resolved through variance applications, appeals to local boards, or litigation in circuit court.", category: "Land Use" },
   { q: "Do you handle cases outside of Northeast Florida?", a: "Our primary service area covers St. Johns, Flagler, Duval, Clay, Putnam, and Volusia Counties. We may accept matters in other Florida counties depending on the circumstances. Contact us to discuss your situation.", category: "General" },
 ];
+---
+<Layout
+  title="Legal Resources & FAQs | The Desai Firm | Saint Augustine"
+  description="Frequently asked questions about family law, personal injury, civil litigation, probate, and more from The Desai Firm in Saint Augustine, Florida."
+  canonical="https://desaifirm.com/resources"
+>
+  <PageHero
+    title="Resources & FAQs"
+    subtitle="Answers to common legal questions across our practice areas."
+    breadcrumb="Resources"
+  />
 
-const Resources = () => {
-  return (
-    <>
-      <SEOHead
-        title="Legal Resources & FAQs | The Desai Firm | Saint Augustine"
-        description="Frequently asked questions about family law, personal injury, civil litigation, probate, and more from The Desai Firm in Saint Augustine, Florida."
-      />
+  <section class="section-padding bg-background">
+    <div class="container-legal max-w-4xl">
+      <div class="bg-cream border border-border rounded-lg p-6 mb-12">
+        <p class="text-sm text-foreground/70 leading-relaxed">
+          <strong class="text-foreground">Important Disclaimer:</strong> The information provided on this page is for general educational and informational purposes only. It does not constitute legal advice, and reading this information does not create an attorney-client relationship between you and The Desai Law Firm LLC. Legal outcomes depend on the specific facts and circumstances of each case. Do not rely on this information as a substitute for consultation with a qualified attorney. No attorney-client relationship is established until a signed engagement letter is in place.
+        </p>
+      </div>
 
-      <PageHero
-        title="Resources & FAQs"
-        subtitle="Answers to common legal questions across our practice areas."
-        breadcrumb="Resources"
-      />
-
-      <section className="section-padding bg-background">
-        <div className="container-legal max-w-4xl">
-          <div className="bg-cream border border-border rounded-lg p-6 mb-12">
-            <p className="text-sm text-foreground/70 leading-relaxed">
-              <strong className="text-foreground">Important Disclaimer:</strong> The information provided on this page is for general educational and informational purposes only. It does not constitute legal advice, and reading this information does not create an attorney-client relationship between you and The Desai Law Firm LLC. Legal outcomes depend on the specific facts and circumstances of each case. Do not rely on this information as a substitute for consultation with a qualified attorney. No attorney-client relationship is established until a signed engagement letter is in place.
-            </p>
+      <div class="space-y-8">
+        {faqs.map((faq) => (
+          <div class="border-b border-border pb-8">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-semibold text-accent bg-accent/10 px-2 py-1 rounded">{faq.category}</span>
+            </div>
+            <h2 class="font-heading text-lg font-semibold text-foreground mb-3">{faq.q}</h2>
+            <p class="text-muted-foreground leading-relaxed">{faq.a}</p>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-          <div className="space-y-8">
-            {faqs.map((faq, i) => (
-              <div key={i} className="border-b border-border pb-8">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-semibold text-accent bg-accent/10 px-2 py-1 rounded">{faq.category}</span>
-                </div>
-                <h2 className="font-heading text-lg font-semibold text-foreground mb-3">{faq.q}</h2>
-                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTASection
-        title="Still Have Questions?"
-        subtitle="Contact The Desai Firm to discuss your specific legal matter with an attorney."
-      />
-    </>
-  );
-};
-
-export default Resources;
+  <CTASection title="Still Have Questions?" subtitle="Contact The Desai Firm to discuss your specific legal matter with an attorney." />
+</Layout>

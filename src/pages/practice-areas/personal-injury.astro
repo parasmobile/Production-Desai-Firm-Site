@@ -1,20 +1,16 @@
-import PracticeAreaLayout from "@/components/PracticeAreaLayout";
-
-const PersonalInjury = () => (
+---
+import Layout from '@/layouts/Layout.astro';
+import PracticeAreaLayout from '@/components/PracticeAreaLayout.astro';
+---
+<Layout
+  title="Personal Injury Attorney Saint Augustine FL | The Desai Firm"
+  description="Saint Augustine personal injury lawyer handling auto accidents, premises liability, and negligence claims. Investigation, documentation, and aggressive negotiation."
+  canonical="https://desaifirm.com/practice-areas/personal-injury"
+>
   <PracticeAreaLayout
     title="Personal Injury"
-    seoTitle="Personal Injury Attorney Saint Augustine FL | The Desai Firm"
-    seoDescription="Saint Augustine personal injury lawyer handling auto accidents, premises liability, and negligence claims. Investigation, documentation, and aggressive negotiation."
-    canonical="https://desaifirm.com/practice-areas/personal-injury"
     breadcrumb="Practice Areas / Personal Injury"
     heroSubtitle="Thorough investigation and aggressive advocacy for accident victims across Northeast Florida."
-    overview={
-      <>
-        <p>When you've been injured due to someone else's negligence, you're facing more than just physical recovery — medical bills, lost income, and insurance company tactics can compound the stress. You need an attorney who will investigate your claim thoroughly, document your damages, and negotiate aggressively on your behalf.</p>
-        <p>The Desai Firm approaches personal injury cases with a focus on building strong evidence from the outset. We work to establish liability, quantify your damages, and pursue the maximum recovery available under the law.</p>
-        <p className="text-sm italic text-muted-foreground">Results and outcomes vary. Past results do not guarantee future outcomes.</p>
-      </>
-    }
     commonIssues={[
       "Automobile and motorcycle accidents",
       "Truck and commercial vehicle accidents",
@@ -45,7 +41,11 @@ const PersonalInjury = () => (
       { q: "What if I'm partially at fault for my accident?", a: "Florida follows a modified comparative negligence standard. You may still recover damages if you are partially at fault, but your recovery may be reduced by your percentage of fault. If you are found to be more than 50% at fault, your recovery may be barred in certain cases." },
       { q: "Should I talk to the other driver's insurance company?", a: "Be cautious about providing recorded statements to the other party's insurer without consulting an attorney first. Insurance adjusters are trained to minimize claims, and early statements can be used against you." },
     ]}
-  />
-);
-
-export default PersonalInjury;
+  >
+    <div slot="overview">
+      <p>When you've been injured due to someone else's negligence, you're facing more than just physical recovery — medical bills, lost income, and insurance company tactics can compound the stress. You need an attorney who will investigate your claim thoroughly, document your damages, and negotiate aggressively on your behalf.</p>
+      <p>The Desai Firm approaches personal injury cases with a focus on building strong evidence from the outset. We work to establish liability, quantify your damages, and pursue the maximum recovery available under the law.</p>
+      <p class="text-sm italic text-muted-foreground">Results and outcomes vary. Past results do not guarantee future outcomes.</p>
+    </div>
+  </PracticeAreaLayout>
+</Layout>

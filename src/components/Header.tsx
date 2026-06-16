@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -12,14 +11,21 @@ const navLinks = [
   { label: "Contact", path: "/contact" },
 ];
 
-const Header = () => {
+interface HeaderProps {
+  currentPath: string;
+}
+
+const Header = ({ currentPath }: HeaderProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+
+  const isActive = (path: string) =>
+    path === "/"
+      ? currentPath === "/"
+      : currentPath === path || currentPath.startsWith(path + "/");
 
   return (
     <header className="sticky top-0 z-50 bg-primary/[0.97] backdrop-blur-sm border-b border-primary">
       <div className="container-legal">
-        {/* Top bar */}
         <div className="hidden lg:flex items-center justify-between py-2 text-sm border-b border-primary-foreground/10">
           <span className="text-primary-foreground/70">
             2200 North Ponce De Leon, Ste 7, Saint Augustine, FL 32084
@@ -33,40 +39,37 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Main nav */}
         <div className="flex items-center justify-between py-3 px-4 lg:px-0">
-          <Link to="/" className="flex flex-col">
+          <a href="/" className="flex flex-col">
             <span className="font-heading text-xl lg:text-2xl font-bold text-primary-foreground tracking-wide">
               The Desai Firm
             </span>
             <span className="text-[10px] lg:text-xs text-primary-foreground/60 tracking-[0.2em] uppercase">
               Attorneys at Law
             </span>
-          </Link>
+          </a>
 
-          {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 className={`px-3 py-2 text-sm font-medium rounded transition-colors ${
-                  location.pathname === link.path
+                  isActive(link.path)
                     ? "text-accent"
                     : "text-primary-foreground/80 hover:text-accent"
                 }`}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            <Link to="/contact">
+            <a href="/contact">
               <Button className="ml-3 bg-accent text-accent-foreground hover:bg-gold-light font-semibold text-sm">
                 Free Consultation
               </Button>
-            </Link>
+            </a>
           </nav>
 
-          {/* Mobile controls */}
           <div className="flex items-center gap-3 lg:hidden">
             <a
               href="tel:9045636952"
@@ -85,28 +88,25 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile menu */}
         {mobileOpen && (
           <nav className="lg:hidden pb-4 px-4 border-t border-primary-foreground/10">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 onClick={() => setMobileOpen(false)}
                 className={`block py-3 text-sm font-medium border-b border-primary-foreground/10 ${
-                  location.pathname === link.path
-                    ? "text-accent"
-                    : "text-primary-foreground/80"
+                  isActive(link.path) ? "text-accent" : "text-primary-foreground/80"
                 }`}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            <Link to="/contact" onClick={() => setMobileOpen(false)}>
+            <a href="/contact" onClick={() => setMobileOpen(false)}>
               <Button className="w-full mt-4 bg-accent text-accent-foreground hover:bg-gold-light font-semibold">
                 Request a Free Consultation
               </Button>
-            </Link>
+            </a>
           </nav>
         )}
       </div>

@@ -1,0 +1,63 @@
+---
+import Header from '@/components/Header';
+import Footer from '@/components/Footer.astro';
+import { Toaster } from '@/components/ui/toaster';
+import { Toaster as Sonner } from '@/components/ui/sonner';
+import '@/index.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  jsonLd?: object;
+}
+
+const { title, description, canonical, jsonLd } = Astro.props;
+const canonicalUrl = canonical || `https://desaifirm.com${Astro.url.pathname}`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-C7W4Z91P78"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C7W4Z91P78');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="The Desai Law Firm" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <Header currentPath={Astro.url.pathname} client:load />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <Toaster client:load />
+    <Sonner client:load />
+  </body>
+</html>

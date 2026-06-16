@@ -1,19 +1,16 @@
-import PracticeAreaLayout from "@/components/PracticeAreaLayout";
-
-const CivilLitigation = () => (
+---
+import Layout from '@/layouts/Layout.astro';
+import PracticeAreaLayout from '@/components/PracticeAreaLayout.astro';
+---
+<Layout
+  title="Civil Litigation Attorney Saint Augustine FL | The Desai Firm"
+  description="Saint Augustine civil litigation attorney handling contract disputes, consumer claims, injunctions, and business conflicts across Northeast Florida."
+  canonical="https://desaifirm.com/practice-areas/civil-litigation"
+>
   <PracticeAreaLayout
     title="Civil Litigation"
-    seoTitle="Civil Litigation Attorney Saint Augustine FL | The Desai Firm"
-    seoDescription="Saint Augustine civil litigation attorney handling contract disputes, consumer claims, injunctions, and business conflicts across Northeast Florida."
-    canonical="https://desaifirm.com/practice-areas/civil-litigation"
     breadcrumb="Practice Areas / Civil Litigation"
     heroSubtitle="Strategic dispute resolution for contract conflicts, consumer claims, and complex civil matters."
-    overview={
-      <>
-        <p>Civil litigation encompasses a broad range of disputes between individuals, businesses, and organizations. Whether you've been sued or need to initiate legal action, the process requires careful analysis, strategic planning, and decisive execution.</p>
-        <p>At The Desai Firm, we emphasize early case assessment — understanding the full scope of your dispute before committing to a strategy. This allows us to identify the most efficient path forward, whether that's aggressive litigation, negotiation, or alternative dispute resolution.</p>
-      </>
-    }
     commonIssues={[
       "Breach of contract claims",
       "Consumer disputes and FDUTPA claims",
@@ -44,7 +41,10 @@ const CivilLitigation = () => (
       { q: "What's the difference between mediation and litigation?", a: "Mediation is a voluntary, collaborative process where a neutral mediator helps parties reach a settlement. Litigation involves presenting your case to a judge or jury for a binding decision. Many civil cases in Florida are required to attempt mediation before going to trial." },
       { q: "Can I recover attorney's fees if I win?", a: "In Florida, attorney's fees are recoverable in certain types of cases — particularly where a contract or statute provides for fee-shifting. We'll evaluate whether fee recovery applies to your situation early in the process." },
     ]}
-  />
-);
-
-export default CivilLitigation;
+  >
+    <div slot="overview">
+      <p>Civil litigation encompasses a broad range of disputes between individuals, businesses, and organizations. Whether you've been sued or need to initiate legal action, the process requires careful analysis, strategic planning, and decisive execution.</p>
+      <p>At The Desai Firm, we emphasize early case assessment — understanding the full scope of your dispute before committing to a strategy. This allows us to identify the most efficient path forward, whether that's aggressive litigation, negotiation, or alternative dispute resolution.</p>
+    </div>
+  </PracticeAreaLayout>
+</Layout>

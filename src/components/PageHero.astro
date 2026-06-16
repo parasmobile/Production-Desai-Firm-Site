@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  breadcrumb?: string;
+}
+const { title, subtitle, breadcrumb } = Astro.props;
+---
+<section class="bg-primary py-16 lg:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary to-navy-dark opacity-90"></div>
+  <div class="container-legal px-4 sm:px-6 lg:px-8 relative z-10">
+    {breadcrumb && (
+      <p class="text-accent text-sm font-medium mb-3 tracking-wide uppercase">{breadcrumb}</p>
+    )}
+    <h1 class="font-heading text-3xl lg:text-5xl font-bold text-primary-foreground mb-4">{title}</h1>
+    {subtitle && (
+      <p class="text-primary-foreground/70 text-lg lg:text-xl max-w-3xl">{subtitle}</p>
+    )}
+    <div class="gold-divider mt-6"></div>
+  </div>
+</section>
