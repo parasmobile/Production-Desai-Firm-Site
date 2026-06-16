@@ -5,15 +5,51 @@ import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import '@/index.css';
 
+const firmJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["LegalService", "Attorney"],
+  "name": "The Desai Law Firm LLC",
+  "alternateName": "The Desai Firm",
+  "url": "https://desaifirm.com",
+  "telephone": "+1-904-563-6952",
+  "email": "pd@desaifirm.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2200 North Ponce De Leon Blvd, Suite 7",
+    "addressLocality": "Saint Augustine",
+    "addressRegion": "FL",
+    "postalCode": "32084",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 29.9012, "longitude": -81.3124 },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "St. Johns County, FL" },
+    { "@type": "AdministrativeArea", "name": "Flagler County, FL" },
+    { "@type": "AdministrativeArea", "name": "Duval County, FL" },
+    { "@type": "AdministrativeArea", "name": "Clay County, FL" },
+    { "@type": "AdministrativeArea", "name": "Putnam County, FL" },
+    { "@type": "AdministrativeArea", "name": "Volusia County, FL" }
+  ],
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "sameAs": [
+    "https://www.floridabar.org/directories/find-mbr/profile/?num=030827",
+    "https://www.avvo.com/attorneys/32084-fl-paras-desai.html",
+    "https://justia.com/lawyers/florida/saint-augustine"
+  ]
+};
+
 interface Props {
   title: string;
   description: string;
   canonical?: string;
-  jsonLd?: object;
+  noindex?: boolean;
+  jsonLd?: object | object[];
 }
 
-const { title, description, canonical, jsonLd } = Astro.props;
+const { title, description, canonical, noindex = false, jsonLd } = Astro.props;
 const canonicalUrl = canonical || `https://desaifirm.com${Astro.url.pathname}`;
+const extraSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 <!doctype html>
 <html lang="en">
@@ -31,7 +67,7 @@ const canonicalUrl = canonical || `https://desaifirm.com${Astro.url.pathname}`;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="The Desai Law Firm" />
-    <link rel="canonical" href={canonicalUrl} />
+    {noindex ? <meta name="robots" content="noindex,nofollow" /> : <link rel="canonical" href={canonicalUrl} />}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -47,7 +83,13 @@ const canonicalUrl = canonical || `https://desaifirm.com${Astro.url.pathname}`;
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
 
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <!-- Firm schema on every page -->
+    <script type="application/ld+json" set:html={JSON.stringify(firmJsonLd)} />
+
+    <!-- Page-specific schemas -->
+    {extraSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body>
     <div class="flex flex-col min-h-screen">

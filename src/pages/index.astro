@@ -3,40 +3,6 @@ import Layout from '@/layouts/Layout.astro';
 import CTASection from '@/components/CTASection.astro';
 import heroImage from '@/assets/hero-staugustine.jpg';
 
-const firmJsonLd = {
-  "@context": "https://schema.org",
-  "@type": ["LegalService", "Attorney"],
-  "name": "The Desai Law Firm LLC",
-  "alternateName": "The Desai Firm",
-  "url": "https://desaifirm.com",
-  "telephone": "+1-904-563-6952",
-  "email": "pd@desaifirm.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "2200 North Ponce De Leon Blvd, Suite 7",
-    "addressLocality": "Saint Augustine",
-    "addressRegion": "FL",
-    "postalCode": "32084",
-    "addressCountry": "US"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 29.9012, "longitude": -81.3124 },
-  "areaServed": [
-    { "@type": "AdministrativeArea", "name": "St. Johns County, FL" },
-    { "@type": "AdministrativeArea", "name": "Flagler County, FL" },
-    { "@type": "AdministrativeArea", "name": "Duval County, FL" },
-    { "@type": "AdministrativeArea", "name": "Clay County, FL" },
-    { "@type": "AdministrativeArea", "name": "Putnam County, FL" },
-    { "@type": "AdministrativeArea", "name": "Volusia County, FL" }
-  ],
-  "priceRange": "$$",
-  "openingHours": "Mo-Fr 09:00-17:00",
-  "sameAs": [
-    "https://www.floridabar.org/directories/find-mbr/profile/?num=030827",
-    "https://www.avvo.com/attorneys/32084-fl-paras-desai.html",
-    "https://justia.com/lawyers/florida/saint-augustine"
-  ]
-};
-
 const practiceAreas = [
   { title: "Family Law", icon: "users", path: "/practice-areas/family-law", desc: "Divorce, child custody, timesharing, paternity, and modifications." },
   { title: "Civil Litigation", icon: "scale", path: "/practice-areas/civil-litigation", desc: "Contract disputes, consumer claims, injunctions, and business conflicts." },
@@ -58,7 +24,6 @@ const whyChooseUs = [
   title="The Desai Firm | Saint Augustine Attorney | Florida Lawyer"
   description="Saint Augustine attorney Paras J. Desai provides results-driven legal representation in family law, civil litigation, personal injury, and more across Northeast Florida."
   canonical="https://desaifirm.com/"
-  jsonLd={firmJsonLd}
 >
   <!-- Hero -->
   <section class="relative min-h-[85vh] flex items-center">

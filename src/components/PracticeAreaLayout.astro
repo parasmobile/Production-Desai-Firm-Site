@@ -18,7 +18,32 @@ interface Props {
 }
 
 const { title, breadcrumb, heroSubtitle, commonIssues, whatWeDo, whatToExpect, faqs } = Astro.props;
+
+// BreadcrumbList JSON-LD from the breadcrumb prop (e.g. "Practice Areas / Family Law")
+const breadcrumbParts = ["Home", ...breadcrumb.split(" / ")];
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbParts.map((name, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": name,
+  })),
+};
+
+// FAQPage JSON-LD from the faqs prop
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+  })),
+};
 ---
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 <PageHero title={title} subtitle={heroSubtitle} breadcrumb={breadcrumb} />
 
 <section class="section-padding bg-background">
