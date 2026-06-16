@@ -9,9 +9,19 @@ interface Props {
   publishDate: string;
   category: string;
   readTime: string;
+  relatedLinks?: { label: string; href: string }[];
 }
 
-const { title, description, canonical, publishDate, category, readTime } = Astro.props;
+const { title, description, canonical, publishDate, category, readTime, relatedLinks } = Astro.props;
+
+const defaultRelatedLinks = [
+  { label: "Family Law Overview", href: "/practice-areas/family-law" },
+  { label: "Divorce", href: "/practice-areas/family-law/divorce" },
+  { label: "Child Custody & Timesharing", href: "/practice-areas/family-law/child-custody" },
+  { label: "Civil Litigation", href: "/practice-areas/civil-litigation" },
+];
+
+const sidebarLinks = relatedLinks ?? defaultRelatedLinks;
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -108,10 +118,9 @@ const breadcrumbJsonLd = {
           <div class="bg-muted rounded-lg p-5">
             <p class="font-heading font-semibold text-foreground mb-3 text-sm">Related Practice Areas</p>
             <ul class="space-y-2">
-              <li><a href="/practice-areas/family-law" class="text-accent text-sm hover:underline flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Family Law Overview</a></li>
-              <li><a href="/practice-areas/family-law/divorce" class="text-accent text-sm hover:underline flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Divorce</a></li>
-              <li><a href="/practice-areas/family-law/child-custody" class="text-accent text-sm hover:underline flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Child Custody & Timesharing</a></li>
-              <li><a href="/practice-areas/civil-litigation" class="text-accent text-sm hover:underline flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Civil Litigation</a></li>
+              {sidebarLinks.map((link) => (
+                <li><a href={link.href} class="text-accent text-sm hover:underline flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>{link.label}</a></li>
+              ))}
             </ul>
           </div>
 
