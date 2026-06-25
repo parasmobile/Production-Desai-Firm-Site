@@ -26,9 +26,10 @@ export default function ConsultationPopup() {
     e.preventDefault();
     setSubmitting(true);
     try {
+      const nameParts = form.name.trim().split(/\s+/);
       const payload: Record<string, string> = {
-        first_name: form.name,
-        last_name: '',
+        first_name: nameParts.length > 1 ? nameParts.slice(0, -1).join(' ') : '',
+        last_name: nameParts.length > 1 ? nameParts[nameParts.length - 1] : nameParts[0] || '',
         phone: form.phone,
         email: form.email,
         brief_message: form.message,
