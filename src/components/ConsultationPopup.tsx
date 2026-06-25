@@ -26,11 +26,20 @@ export default function ConsultationPopup() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'popup' }),
-      });
+      const payload: Record<string, string> = {
+        first_name: form.name,
+        last_name: '',
+        phone: form.phone,
+        email: form.email,
+        brief_message: form.message,
+        source: 'desaifirm.com - Free Consultation Popup',
+        submitted_at: new Date().toISOString(),
+      };
+      const params = new URLSearchParams(payload);
+      await fetch(
+        `https://flow.zoho.com/784331050/flow/webhook/incoming?zapikey=1001.abee62316490c0512da8aba1b4a0c10b.9f725018e3f0f2dd21795d84d81c6137&isdebug=false&${params.toString()}`,
+        { method: 'POST', mode: 'no-cors', body: params }
+      );
     } catch {
       // silently continue — show success regardless to avoid confusing users
     }
