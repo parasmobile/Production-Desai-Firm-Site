@@ -46,10 +46,12 @@ interface Props {
   canonical?: string;
   noindex?: boolean;
   jsonLd?: object | object[];
+  ogImage?: string;
 }
 
-const { title, description, canonical, noindex = false, jsonLd } = Astro.props;
+const { title, description, canonical, noindex = false, jsonLd, ogImage } = Astro.props;
 const canonicalUrl = canonical || `https://desaifirm.com${Astro.url.pathname}`;
+const ogImageUrl = ogImage || 'https://desaifirm.com/og-image.jpg';
 const extraSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 <!doctype html>
@@ -80,9 +82,13 @@ const extraSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="The Desai Firm" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- Firm schema on every page -->
     <script type="application/ld+json" set:html={JSON.stringify(firmJsonLd)} />
