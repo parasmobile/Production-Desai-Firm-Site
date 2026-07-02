@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '@/layouts/Layout.astro';
 import CTASection from '@/components/CTASection.astro';
 import heroImage from '@/assets/hero-staugustine.jpg';
@@ -28,7 +29,7 @@ const whyChooseUs = [
   <!-- Hero -->
   <section class="relative min-h-[85vh] flex items-center">
     <div class="absolute inset-0">
-      <img src={heroImage.src} alt="Saint Augustine, Florida historic downtown and Bridge of Lions" class="w-full h-full object-cover" loading="eager" />
+      <Image src={heroImage} alt="Saint Augustine, Florida historic downtown and Bridge of Lions" class="w-full h-full object-cover" widths={[768, 1280, 1920]} sizes="100vw" format="webp" quality={75} loading="eager" fetchpriority="high" />
       <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40"></div>
     </div>
     <div class="container-legal px-4 sm:px-6 lg:px-8 relative z-10 py-20">

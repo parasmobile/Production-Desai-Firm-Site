@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://desaifirm.com/sitemap.xml
+Sitemap: https://desaifirm.com/sitemap-index.xml
